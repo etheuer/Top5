@@ -9,11 +9,11 @@ class ListsController < ApplicationController
 	end
 
 	def new
-		@list = List.new
+		@list = current_user.lists.build
 	end
 
 	def create 
-		@list = List.new(list_params)
+		@list = current_user.lists.build(list_params)
 
 		if @list.save
 			redirect_to @list, notice: "Successfully created new List"
