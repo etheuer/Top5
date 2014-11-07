@@ -1,5 +1,6 @@
 class ListsController < ApplicationController
 	before_action :find_list, only: [:show, :edit, :update, :destroy, :upvote]
+	before_action :authenticate_user!,except: [:index, :show]
 
 	def index
 		@lists = List.all.order("created_at DESC")
