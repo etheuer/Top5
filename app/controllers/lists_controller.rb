@@ -41,7 +41,7 @@ class ListsController < ApplicationController
 	private
 
 	def list_params
-		params.require(:list).permit(:title, :description)
+		params.require(:list).permit(:image, :title, :description)
 	end 
 
 	def find_list
