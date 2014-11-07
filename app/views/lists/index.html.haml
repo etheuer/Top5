@@ -1,3 +1,9 @@
-- @lists.each do |list|
-	= link_to (image_tag list.image.url(:medium)), list
-	%h2= link_to list.title, list
+#lists.transitions-enabled
+	- @lists.each do |list|
+		.box.panel.panel-default
+			= link_to (image_tag list.image.url), list
+			.panel.body
+				%h2= link_to list.title, list
+				%p.user
+				Submitted by 
+				= list.user.email

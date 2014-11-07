@@ -14,6 +14,7 @@ gem 'autoprefixer-rails'
 gem 'simple_form', '~> 3.0.2'
 gem 'devise', '~> 3.4.1'
 gem 'paperclip', '~> 4.2.0'
+gem 'masonry-rails', '~> 0.2.1'
 
 group :doc do
   gem 'sdoc', require: false
