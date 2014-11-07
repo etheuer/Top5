@@ -14,5 +14,8 @@
 						= @list.user.email
 					.col-md-6
 						.btn-group.pull-right
+							= link_to like_list_path(@list), method: :put, class: "btn btn-default" do
+								%span.glyphicon.glyphicon-heart
+									= @list.get_upvotes.size
 							= link_to "Edit", edit_list_path, class: "btn btn-default"
 							= link_to "Delete", list_path, method: :delete, data:  { confirm: "Are you sure?"}, class: "btn btn-default"

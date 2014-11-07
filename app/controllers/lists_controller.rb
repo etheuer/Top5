@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-	before_action :find_list, only: [:show, :edit, :update, :destroy]
+	before_action :find_list, only: [:show, :edit, :update, :destroy, :upvote]
 
 	def index
 		@lists = List.all.order("created_at DESC")
@@ -36,6 +36,11 @@ class ListsController < ApplicationController
 	def destroy
 		@list.destroy
 		redirect_to root_path
+	end
+
+	def upvote
+		@list.upvote_by current_user
+		redirect_to :back
 	end
 
 	private
