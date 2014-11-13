@@ -1,0 +1,12 @@
+- content_for :title, @tag.name
+%h1= @tag.name
+#lists.transitions-enabled
+	- @lists.each do |list|
+		.box.panel.panel-default
+			- if list.image.present?
+				= link_to (image_tag list.image.url), list
+			.panel.body
+				%h2= link_to list.title, list
+				%p.user
+				Por  
+				= list.user.email

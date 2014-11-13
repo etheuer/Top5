@@ -11,6 +11,7 @@ class ListsController < ApplicationController
 
 	def new
 		@list = current_user.lists.build
+		5.times { @list.list_items.build } 
 	end
 
 	def create 
@@ -44,10 +45,20 @@ class ListsController < ApplicationController
 		redirect_to :back
 	end
 
+	def tagged
+	  if params[:tag].present? 
+	    @lists = List.tagged_with(params[:tag])
+	  else 
+	    @lists = List.postall
+	  end  
+	end
+
 	private
 
 	def list_params
-		params.require(:list).permit(:image, :title, :description)
+		params.require(:list).permit(
+									:image, :title, :description, :tag_list,
+									list_items_attributes: [:id, :ranking, :title, :url, :description, :_destroy])
 	end 
 
 	def find_list

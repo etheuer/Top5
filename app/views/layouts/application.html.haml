@@ -1,9 +1,9 @@
 !!! 5
 %html
 %head
-	%title List Board
-	= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-	= javascript_include_tag "application", "data-turbolinks-track" => true
+	%title= full_title(content_for :title)
+	= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true	
+	= javascript_include_tag "application", "data-turbolinks-track" => true, :cache => true
 	= csrf_meta_tags
 %body
 	%nav.navbar.navbar-default

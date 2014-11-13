@@ -1,4 +1,5 @@
 Top5::Application.routes.draw do
+  get "tag/show"
   devise_for :users
   resources :lists do
   	member do
@@ -6,5 +7,8 @@ Top5::Application.routes.draw do
   	end
   end
 
+  resources :tag
+
   root "lists#index"  
+
 end
