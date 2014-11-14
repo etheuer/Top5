@@ -18,6 +18,8 @@ gem 'masonry-rails', '~> 0.2.1'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'cocoon', '~> 1.2.6'
 gem 'acts-as-taggable-on', '~> 3.4'
+# Used for autocomplete in create list page
+gem 'rails3-jquery-autocomplete', '~> 1.0.14'
 
 group :doc do
   gem 'sdoc', require: false

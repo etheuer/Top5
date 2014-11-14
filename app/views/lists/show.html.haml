@@ -6,10 +6,10 @@
 				.panel-heading.list_image
 					= image_tag @list.image.url
 			.panel-body
-				%h1= @list.title
 				- @list.tags.any?
+				%h1= @list.tag_list.first
 				%h3= "(por " + @list.user.username + ")"
-				%h3= @list.tag_list.first
+				%p= @list.description
 				%ol
 					- for listitem in @list.list_items
 						%li= listitem.title
